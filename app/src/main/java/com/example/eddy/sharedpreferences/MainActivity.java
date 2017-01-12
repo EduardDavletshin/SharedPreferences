@@ -38,13 +38,13 @@ public class MainActivity extends AppCompatActivity {
         editText_age.setText(sharedPreferences.getString(age, ""));
 
         editText_name
-                .addTextChangedListener(new MyTextWatcher(sharedPreferences, name));
+                .addTextChangedListener(new SavedPreferencesTextWatcher(sharedPreferences, name));
         editText_lastName
-                .addTextChangedListener(new MyTextWatcher(sharedPreferences, lastName));
+                .addTextChangedListener(new SavedPreferencesTextWatcher(sharedPreferences, lastName));
         editText_middlName
-                .addTextChangedListener(new MyTextWatcher(sharedPreferences, middlename));
+                .addTextChangedListener(new SavedPreferencesTextWatcher(sharedPreferences, middlename));
         editText_age
-                .addTextChangedListener(new MyTextWatcher(sharedPreferences, age));
+                .addTextChangedListener(new SavedPreferencesTextWatcher(sharedPreferences, age));
     }
 }
 

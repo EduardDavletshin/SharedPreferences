@@ -8,13 +8,13 @@ import android.text.TextWatcher;
  * Created by eddy on 1/12/2017.
  */
 
-public class MyTextWatcher implements TextWatcher {
+public class SavedPreferencesTextWatcher implements TextWatcher {
 
     private SharedPreferences sharedPreferences;
-    private String string;
+    private String key;
 
-    public MyTextWatcher(SharedPreferences sharedPreferences, String string/*, EditText editText*/) {
-        this.string = string;
+    public SavedPreferencesTextWatcher(SharedPreferences sharedPreferences, String key) {
+        this.key = key;
         this.sharedPreferences = sharedPreferences;
     }
 
@@ -30,6 +30,6 @@ public class MyTextWatcher implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        sharedPreferences.edit().putString(string, s.toString()).apply();
+        sharedPreferences.edit().putString(key, s.toString()).apply();
     }
 }
