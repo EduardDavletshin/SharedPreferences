@@ -37,10 +37,14 @@ public class MainActivity extends AppCompatActivity {
         editText_middlName.setText(sharedPreferences.getString(middlename, ""));
         editText_age.setText(sharedPreferences.getString(age, ""));
 
-        editText_name.addTextChangedListener(new MyTextWatcher(sharedPreferences, name, editText_name));
-        editText_lastName.addTextChangedListener(new MyTextWatcher(sharedPreferences, lastName, editText_lastName));
-        editText_middlName.addTextChangedListener(new MyTextWatcher(sharedPreferences, middlename, editText_middlName));
-        editText_age.addTextChangedListener(new MyTextWatcher(sharedPreferences, age, editText_age));
+        editText_name
+                .addTextChangedListener(new MyTextWatcher(sharedPreferences, name));
+        editText_lastName
+                .addTextChangedListener(new MyTextWatcher(sharedPreferences, lastName));
+        editText_middlName
+                .addTextChangedListener(new MyTextWatcher(sharedPreferences, middlename));
+        editText_age
+                .addTextChangedListener(new MyTextWatcher(sharedPreferences, age));
     }
 }
 

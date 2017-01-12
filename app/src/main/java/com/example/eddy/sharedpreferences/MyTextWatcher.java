@@ -3,7 +3,6 @@ package com.example.eddy.sharedpreferences;
 import android.content.SharedPreferences;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.EditText;
 
 /**
  * Created by eddy on 1/12/2017.
@@ -13,10 +12,8 @@ public class MyTextWatcher implements TextWatcher {
 
     private SharedPreferences sharedPreferences;
     private String string;
-    private EditText editText;
 
-    public MyTextWatcher(SharedPreferences sharedPreferences, String string, EditText editText) {
-        this.editText = editText;
+    public MyTextWatcher(SharedPreferences sharedPreferences, String string/*, EditText editText*/) {
         this.string = string;
         this.sharedPreferences = sharedPreferences;
     }
@@ -33,6 +30,6 @@ public class MyTextWatcher implements TextWatcher {
 
     @Override
     public void afterTextChanged(Editable s) {
-        sharedPreferences.edit().putString(string, editText.getText().toString()).apply();
+        sharedPreferences.edit().putString(string, s.toString()).apply();
     }
 }
